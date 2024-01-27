@@ -12,7 +12,7 @@ func Run() {
 	headers := map[string]string{
 		"User-Agent": "Mozilla Chrome 111.1.1",
 	}
-	body := fmt.Sprintf(`{"username": "admin", "password": "admin"}`)
+	body := goRequests.JsonT{"username": "admin", "password": "admin"}
 	accessResp, err := session.PostJson(accessApi, headers, body)
 	if err != nil {
 		log.Fatal("获取access_token失败", err)
